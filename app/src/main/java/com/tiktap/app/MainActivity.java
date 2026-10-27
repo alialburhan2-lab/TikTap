@@ -24,7 +24,8 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
     private int count = 0;
     private boolean running = false;
-    private TextView status, counter, speedLabel;\n    private EditText coordX, coordY;
+    private TextView status, counter, speedLabel;
+    private EditText coordX, coordY;
     private Button toggle;
     private SeekBar speed;
     private final Handler handler = new Handler(Looper.getMainLooper());

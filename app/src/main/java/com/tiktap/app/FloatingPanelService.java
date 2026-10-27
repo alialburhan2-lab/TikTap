@@ -14,7 +14,8 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;\nimport android.widget.SeekBar;
+import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +29,11 @@ public class FloatingPanelService extends Service {
     private View panel;
     private WindowManager.LayoutParams params;
     private TextView countView;
-    private int manualCount = 0;\n    private boolean running = false;\n    private int intervalMs = 500;\n    private android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());\n    private final Runnable demoCounter = new Runnable() { public void run() { if (!running) return; manualCount++; if (countView != null) countView.setText("عداد جلسة الاختبار: " + manualCount); handler.postDelayed(this, intervalMs); } };
+    private int manualCount = 0;
+    private boolean running = false;
+    private int intervalMs = 500;
+    private android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
+    private final Runnable demoCounter = new Runnable() { public void run() { if (!running) return; manualCount++; if (countView != null) countView.setText("عداد جلسة الاختبار: " + manualCount); handler.postDelayed(this, intervalMs); } };
     private float downX, downY;
     private int startX, startY;
 
@@ -116,7 +121,9 @@ public class FloatingPanelService extends Service {
         close.setOnClickListener(v -> stopSelf());
 
         panel = box;
-        int type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        int type = android.os.Build.VERSION.SDK_INT >= 26
+                ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+                : WindowManager.LayoutParams.TYPE_PHONE;
         params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
@@ -159,7 +166,9 @@ public class FloatingPanelService extends Service {
     }
 
     @Override public void onDestroy() {
-        running = false;\n        handler.removeCallbacksAndMessages(null);\n        if (wm != null && panel != null) {
+        running = false;
+        handler.removeCallbacksAndMessages(null);
+        if (wm != null && panel != null) {
             try { wm.removeView(panel); } catch (Exception ignored) {}
         }
         super.onDestroy();
