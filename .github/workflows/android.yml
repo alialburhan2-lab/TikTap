@@ -87,5 +87,5 @@ jobs:
           gh release delete latest --yes --cleanup-tag || true
           gh release create latest dist/TikTap.apk \
             --title "TikTap - آخر بناء" \
-            --notes "بناء تلقائي من الالتزام ${GITHUB_SHA::7}. ثبّت TikTap.apk على جهاز Android 8.0 أو أحدث." \
+            --notes "بناء تلقائي من الالتزام ${GITHUB_SHA::7}. ثبّت TikTap.apk على جهاز Android 6.0 أو أحدث." \
             --target "${GITHUB_SHA}"
