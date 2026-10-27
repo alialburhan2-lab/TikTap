@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- outer cyan ripple, offset for a playful split effect -->
+    <path android:strokeColor="#FF22E3E0" android:strokeWidth="4"
+        android:pathData="M56,32a22,22 0,1 1,0 44a22,22 0,1 1,0 -44z" />
+    <!-- outer pink ripple -->
+    <path android:strokeColor="#FFFF2E63" android:strokeWidth="4"
+        android:pathData="M52,32a22,22 0,1 1,0 44a22,22 0,1 1,0 -44z" />
+    <!-- middle white ripple -->
+    <path android:strokeColor="#CCFFFFFF" android:strokeWidth="3"
+        android:pathData="M54,41a13,13 0,1 1,0 26a13,13 0,1 1,0 -26z" />
+    <!-- tap point -->
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M54,48a6,6 0,1 1,0 12a6,6 0,1 1,0 -12z" />
+</vector>
