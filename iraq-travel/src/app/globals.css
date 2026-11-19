@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-river-950: #081a2f;
+  --color-river-900: #0f2a4a;
+  --color-river-800: #163a63;
+  --color-river-700: #1d4a7c;
+  --color-river-500: #2f6aa8;
+  --color-river-100: #dfe9f4;
+  --color-sand-50: #fbf8f2;
+  --color-sand-100: #f6f0e4;
+  --color-sand-200: #ece1cb;
+  --color-sand-300: #dfcda9;
+  --color-sand-500: #c2a878;
+  --color-gold-300: #e5c57e;
+  --color-gold-400: #d9b25f;
+  --color-gold-500: #b8892b;
+  --color-gold-700: #86621a;
+  --color-charcoal: #1f2328;
+  --color-charcoal-600: #4a525c;
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-arabic: "Noto Naskh Arabic", "Noto Sans Arabic", "Geeza Pro", "Segoe UI", Tahoma, sans-serif;
+
+  --animate-rise: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+html { scroll-behavior: smooth; }
+body {
+  @apply bg-sand-50 text-charcoal antialiased;
+  font-family: var(--font-sans);
+}
+[dir="rtl"] body, [dir="rtl"] .font-display { font-family: var(--font-arabic); }
+.font-display { font-family: var(--font-display); letter-spacing: -0.01em; }
+
+@utility container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+@utility card { @apply rounded-2xl bg-white shadow-[0_1px_2px_rgba(15,42,74,0.06),0_8px_24px_-12px_rgba(15,42,74,0.18)] ring-1 ring-river-900/5; }
+@utility card-hover { @apply transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_4px_rgba(15,42,74,0.08),0_18px_40px_-16px_rgba(15,42,74,0.35)]; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500 disabled:opacity-50; }
+@utility btn-gold { @apply btn bg-gold-500 text-white hover:bg-gold-700; }
+@utility btn-river { @apply btn bg-river-900 text-white hover:bg-river-800; }
+@utility btn-ghost { @apply btn bg-white/10 text-white ring-1 ring-white/40 backdrop-blur hover:bg-white/20; }
+@utility btn-outline { @apply btn bg-white text-river-900 ring-1 ring-river-900/20 hover:bg-sand-100; }
+@utility input { @apply w-full rounded-xl border border-sand-300 bg-white px-3 py-2 text-sm text-charcoal shadow-sm outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-300/50; }
+@utility label { @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-charcoal-600; }
+@utility eyebrow { @apply text-xs font-semibold uppercase tracking-[0.2em] text-gold-500; }
+.prose-it p { @apply mb-3 leading-relaxed text-charcoal-600; }
+@utility skip-link { @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-river-900; }
+
+/* Leaflet container should not overflow its card */
+.leaflet-container { font: inherit; border-radius: 1rem; }
+
+@media print {
+  header, footer, .no-print { display: none !important; }
+  body { background: white; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

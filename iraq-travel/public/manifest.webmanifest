@@ -1,0 +1,10 @@
+{
+  "name": "IRAQ TRAVEL",
+  "short_name": "Iraq Travel",
+  "description": "Discover the Land Between Two Rivers.",
+  "start_url": "/en",
+  "display": "standalone",
+  "background_color": "#fbf8f2",
+  "theme_color": "#0f2a4a",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

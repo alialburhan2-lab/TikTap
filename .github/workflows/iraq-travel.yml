@@ -1,0 +1,25 @@
+name: IRAQ TRAVEL web
+
+on:
+  push:
+    paths: ["iraq-travel/**", ".github/workflows/iraq-travel.yml"]
+  pull_request:
+    paths: ["iraq-travel/**", ".github/workflows/iraq-travel.yml"]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: iraq-travel
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: iraq-travel/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
