@@ -103,6 +103,7 @@ async function GovernorateView({ gov, sites, locale, t }: { gov: Governorate; si
         <div className="space-y-10 lg:col-span-2">
           <section><h2 className="font-display mb-3 text-2xl font-bold text-river-900">{t.common.about}</h2><Translated text={gov.summary} locale={locale} t={t} /></section>
           <section><h2 className="font-display mb-3 text-2xl font-bold text-river-900">{t.common.history}</h2><Translated text={gov.history} locale={locale} t={t} /></section>
+          {gov.slug === "babylon" && <Link href={`/${locale}/heritage/babylon-civilization`} className="btn-gold">{t.stories.babylonLink} →</Link>}
           <section className="grid gap-6 md:grid-cols-2">
             <div className="card p-6"><h2 className="font-display mb-2 text-xl font-bold text-river-900">{t.common.geography}</h2><Translated text={gov.geography} locale={locale} t={t} /></div>
             <div className="card p-6"><h2 className="font-display mb-2 text-xl font-bold text-river-900">{t.common.bestTime}</h2><Translated text={gov.bestTimeToVisit} locale={locale} t={t} /></div>
@@ -243,6 +244,7 @@ async function SiteView({ site, sites, governorates, locale, t }: { site: Touris
             <a className="mt-1 inline-block text-xs text-river-700 underline" href={`https://www.openstreetmap.org/?mlat=${site.lat}&mlon=${site.lng}#map=14/${site.lat}/${site.lng}`} target="_blank" rel="noopener noreferrer">OpenStreetMap ↗</a>
           </div>
           <div className="card p-5"><h2 className="mb-2 font-semibold text-river-900">{t.common.sources}</h2><SourcesList ids={site.sourceIds} sources={sources} t={t} /></div>
+          {gov?.slug === "babylon" && <Link href={`/${locale}/heritage/babylon-civilization`} className="btn-river w-full">{t.stories.babylonLink} →</Link>}
           <Link href={`/${locale}/planner?arrival=${gov?.slug ?? ""}`} className="btn-gold w-full">{t.home.planBtn}</Link>
         </aside>
       </div>

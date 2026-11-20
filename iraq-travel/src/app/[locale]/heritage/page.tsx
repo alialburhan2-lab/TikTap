@@ -31,6 +31,12 @@ export default async function HeritagePage({ params }: { params: Promise<{ local
     <>
       <PageHero eyebrow="UNESCO" title={t.heritage.title} text={t.heritage.intro} />
       <div className="container-x mt-10"><Notice tone="warn">{t.heritage.danger} <a className="underline" href="https://whc.unesco.org/" target="_blank" rel="noopener noreferrer">whc.unesco.org</a></Notice></div>
+      <div className="container-x mt-6">
+        <Link href={`/${locale}/heritage/babylon-civilization`} className="card card-hover flex flex-wrap items-center justify-between gap-4 bg-gradient-to-br from-river-900 to-river-700 p-6 text-white">
+          <span><span className="eyebrow text-gold-300">Babylon</span><span className="font-display mt-1 block text-2xl font-bold">{t.stories.babylonLink}</span></span>
+          <span className="btn-gold">{t.stories.readStory} →</span>
+        </Link>
+      </div>
       <ol className="container-x mt-10 space-y-6">
         {sorted.map((l) => (
           <li key={l.url} className="card grid gap-6 p-6 md:grid-cols-[140px_1fr] md:p-8">

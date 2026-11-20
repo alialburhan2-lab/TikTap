@@ -131,6 +131,10 @@ export const touristSites: TouristSite[] = [
     summary: L("The ceremonial road that led through the Ishtar Gate during New Year (Akitu) festivals.", "الطريق الاحتفالي الذي كان يمر عبر بوابة عشتار خلال احتفالات رأس السنة (أكيتو)."),
     history: L("Built under Nebuchadnezzar II; sections of the original paving and walls survive.", "شُيّد في عهد نبوخذنصر الثاني، ولا تزال أجزاء من رصفه وجدرانه الأصلية قائمة.") }),
 
+  site({ slug: "borsippa", gov: "babylon", cats: ["archaeological", "religious"], interests: ["archaeology", "history"], lat: 32.3919, lng: 44.3417, hours: 1.5,
+    name: L("Borsippa (Birs Nimrud)", "بورسيبا (برس نمرود)", "بۆرسیپا", "Borsippa", "Borsippa", "Borsippa"),
+    summary: L("The ruined ziggurat of Nabu's sacred city, rising above the plain south-west of Babylon.", "زقورة مدينة الإله نابو المقدسة المتهدمة، ترتفع فوق السهل جنوب غرب بابل."),
+    history: L("Borsippa's temple Ezida and its ziggurat were rebuilt by Nebuchadnezzar II; the vitrified brick mass at the top was long mistaken by travellers for the Tower of Babel.", "أعاد نبوخذنصر الثاني بناء معبد إيزيدا وزقورته في بورسيبا، وظن الرحالة طويلاً أن كتلة الآجر المتزجج في قمتها بقايا برج بابل.") }),
   // ---------------- Najaf ----------------
   site({ slug: "imam-ali-shrine", gov: "najaf", cats: ["religious"], interests: ["religious", "culture", "history"], lat: 31.9961, lng: 44.3143, hours: 2, featured: true, restrictions: RELIGIOUS_NOTE,
     name: L("Imam Ali Shrine", "العتبة العلوية المقدسة (مرقد الإمام علي)", "مەرقەدی ئیمام عەلی", "Mausolée de l'imam Ali", "Imam-Ali-Schrein", "Santuario del Imán Alí"),

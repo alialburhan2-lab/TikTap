@@ -5,7 +5,7 @@ import { getGovernorates, getSites } from "@/lib/queries";
 
 export const revalidate = 3600;
 
-const STATIC = ["", "/destinations", "/heritage", "/planner", "/hotels", "/restaurants", "/prices", "/transport", "/map", "/safety", "/protection", "/emergency", "/sources"];
+const STATIC = ["", "/destinations", "/heritage", "/planner", "/hotels", "/restaurants", "/prices", "/transport", "/map", "/safety", "/protection", "/emergency", "/sources", "/heritage/babylon-civilization"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteUrl();
