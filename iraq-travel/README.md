@@ -152,11 +152,11 @@ The migrations and seed were tested against PostgreSQL 16, including the RLS beh
 
 ### Incomplete / needs real-world input
 * **Verified data.** No content was verified against official sources during development: outbound access to gov.uk, UNESCO, Wikimedia and similar sites was blocked in the build environment. Everything real is marked *Unverified*, and coordinates are marked approximate.
-* **Photographs.** None are bundled, to avoid misattributed images. Pages show an illustrated placeholder marked "Verified photo pending" until editors attach licensed photos.
+* **Photographs.** None are bundled, to avoid misattributed images. Wikimedia Commons is blocked by the build environment's network, so photos must be added by an editor in the admin, or fetched once that network access is allowed. Pages show an illustrated placeholder marked "Verified photo pending" until editors attach licensed photos.
 * **Emergency numbers.** Commonly cited national numbers exist only as **unpublished drafts** in the admin, pending official confirmation.
 * **Advisories.** No official advisories are seeded, because they can't be entered without a current source.
 * **Hotels, restaurants and prices** are DEMO samples only.
-* **Translations.** French, German and Spanish descriptions fall back to English with a notice. Kurdish UI strings are a draft.
+* **Translations.** The interface is fully translated in all six languages. Long safety/legal guidance stays in its reviewed English original outside English and Arabic. Destination descriptions in Kurdish, French, German and Spanish still fall back to English with a notice, and the Kurdish interface needs native-speaker review.
 * **Image upload** to Supabase Storage from the admin UI: photos are added by URL for now. The bucket and policies already exist.
 * **Booking, live prices, live flight schedules and page-view analytics** are not integrated.
 * **Rate limiting** is in-memory per instance. Use a shared store such as Redis or Upstash for multi-instance production.
