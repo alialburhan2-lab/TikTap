@@ -12,7 +12,7 @@ export function parseImages(text: string): { images: ImageAsset[]; error?: strin
   const images: ImageAsset[] = [];
   for (const [i, raw] of text.split("\n").map((l) => l.trim()).filter(Boolean).entries()) {
     const [url, alt = "", credit = "", license = "", sourceUrl = "", verified = "no"] = raw.split("|").map((p) => p.trim());
-    if (!/^https:\/\/\S+$/.test(url)) return { images, error: `Line ${i + 1}: image URL must start with https://` };
+    if (!/^https:\/\/\S+$/.test(url) && !/^\/images\/[\w\-/.]+$/.test(url)) return { images, error: `Line ${i + 1}: image URL must start with https:// or be a local /images/... path` };
     if (!credit || !license) return { images, error: `Line ${i + 1}: credit and licence are required for every photo` };
     images.push({ url, alt, credit, license, sourceUrl, verified: /^(yes|true|1|verified)$/i.test(verified) });
   }

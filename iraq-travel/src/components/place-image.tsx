@@ -17,7 +17,7 @@ const MOTIF: Record<string, string> = {
 export function PlaceImage({ images, category, alt, t, className = "", showCaption = false }: {
   images: ImageAsset[]; category?: SiteCategory | string; alt: string; t: Dictionary; className?: string; showCaption?: boolean;
 }) {
-  const img = images.find((i) => i.verified && i.url.startsWith("https://"));
+  const img = images.find((i) => i.verified && (i.url.startsWith("https://") || /^\/images\/[\w\-/.]+$/.test(i.url)));
   if (img) {
     return (
       <figure className={`relative overflow-hidden bg-sand-200 ${className}`}>
