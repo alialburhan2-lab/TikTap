@@ -1,0 +1,239 @@
+// غسان البرهان | المنصة الرسمية — مخطط قاعدة البيانات
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  OWNER
+  EDITOR
+  AUTHOR
+}
+
+enum ArticleStatus {
+  DRAFT
+  REVIEW
+  SCHEDULED
+  PUBLISHED
+  ARCHIVED
+}
+
+enum CommentStatus {
+  PENDING
+  APPROVED
+  SPAM
+}
+
+model User {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  role         Role      @default(AUTHOR)
+  bio          String?
+  avatarUrl    String?
+  active       Boolean   @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  articles Article[]
+  media    Media[]
+
+  @@index([role])
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  sortOrder   Int      @default(0)
+  showInNav   Boolean  @default(true)
+  locale      String   @default("ar")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  articles Article[]
+
+  @@index([sortOrder])
+}
+
+model Tag {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  createdAt DateTime @default(now())
+
+  articles ArticleTag[]
+}
+
+model Article {
+  id             String        @id @default(cuid())
+  title          String
+  slug           String        @unique
+  subtitle       String?
+  excerpt        String?
+  content        String        @default("")
+  /// نسخة نصية من المحتوى للبحث
+  contentText    String        @default("")
+  coverImage     String?
+  coverImageAlt  String?
+  status         ArticleStatus @default(DRAFT)
+  featured       Boolean       @default(false)
+  isDemo         Boolean       @default(false)
+  locale         String        @default("ar")
+  publishedAt    DateTime?
+  views          Int           @default(0)
+  readingMinutes Int           @default(1)
+  seoTitle       String?
+  seoDescription String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  authorId   String
+  author     User         @relation(fields: [authorId], references: [id], onDelete: Restrict)
+  categoryId String?
+  category   Category?    @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  tags       ArticleTag[]
+  comments   Comment[]
+  pageViews  PageView[]
+
+  @@index([status, publishedAt(sort: Desc)])
+  @@index([categoryId, status, publishedAt(sort: Desc)])
+  @@index([authorId])
+  @@index([views(sort: Desc)])
+  @@index([featured])
+  @@index([locale])
+  @@index([title(ops: raw("gin_trgm_ops"))], map: "Article_title_trgm_idx", type: Gin)
+  @@index([excerpt(ops: raw("gin_trgm_ops"))], map: "Article_excerpt_trgm_idx", type: Gin)
+  @@index([contentText(ops: raw("gin_trgm_ops"))], map: "Article_contentText_trgm_idx", type: Gin)
+}
+
+model ArticleTag {
+  articleId String
+  tagId     String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, tagId])
+  @@index([tagId])
+}
+
+model Comment {
+  id          String        @id @default(cuid())
+  articleId   String
+  article     Article       @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  authorName  String
+  authorEmail String
+  content     String
+  status      CommentStatus @default(PENDING)
+  ipHash      String?
+  createdAt   DateTime      @default(now())
+
+  @@index([articleId, status, createdAt])
+  @@index([status, createdAt])
+}
+
+model Media {
+  id           String   @id @default(cuid())
+  url          String
+  storageKey   String   @unique
+  driver       String   @default("local")
+  filename     String
+  mimeType     String
+  size         Int
+  width        Int?
+  height       Int?
+  alt          String?
+  uploadedById String?
+  uploadedBy   User?    @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  createdAt    DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model NewsletterSubscriber {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  confirmed      Boolean   @default(true)
+  unsubscribedAt DateTime?
+  createdAt      DateTime  @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  ipHash    String?
+  createdAt DateTime @default(now())
+
+  @@index([read, createdAt])
+}
+
+/// صف واحد (id = "site") لإعدادات الموقع وبيانات الكاتب
+model SiteSettings {
+  id                String   @id @default("site")
+  siteName          String   @default("غسان البرهان")
+  siteTagline       String   @default("الكلمة موقف.. والفكر مساحة")
+  siteDescription   String   @default("المنصة الرسمية للكاتب والصحفي غسان البرهان: مقالات وتحليلات وحوارات ودراسات وآراء.")
+  contactEmail      String?
+  logoUrl           String?
+  socialLinks       Json     @default("{}")
+  footerText        String?
+  postsPerPage      Int      @default(12)
+  commentsEnabled   Boolean  @default(true)
+  newsletterEnabled Boolean  @default(true)
+  authorName        String   @default("غسان البرهان")
+  authorTitle       String?
+  authorShortBio    String?
+  authorBio         String?
+  authorImage       String?
+  heroImage       String?  @default("/images/author/hero-books.webp")
+  privacyPolicy     String?
+  termsOfUse        String?
+  updatedAt         DateTime @updatedAt
+}
+
+model PageView {
+  id          String   @id @default(cuid())
+  path        String
+  articleId   String?
+  article     Article? @relation(fields: [articleId], references: [id], onDelete: SetNull)
+  visitorHash String
+  referrer    String?
+  device      String?
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([articleId, createdAt])
+  @@index([path, createdAt])
+  @@index([visitorHash, articleId, createdAt])
+}
+
+/// لتحديد محاولات تسجيل الدخول
+model LoginAttempt {
+  id        String   @id @default(cuid())
+  key       String
+  success   Boolean
+  createdAt DateTime @default(now())
+
+  @@index([key, createdAt])
+}
+
+/// محدد معدل عام (التعليقات، الاتصال، النشرة)
+model RateLimitHit {
+  id        String   @id @default(cuid())
+  key       String
+  createdAt DateTime @default(now())
+
+  @@index([key, createdAt])
+}

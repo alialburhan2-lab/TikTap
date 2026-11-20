@@ -1,0 +1,153 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-navy-950: #0d1a24;
+  --color-navy-900: #172a38;
+  --color-navy-800: #213a4c;
+  --color-navy-700: #2e4c62;
+  --color-navy-100: #e3e8ec;
+  --color-gold-600: #b8955a;
+  --color-gold-500: #d8b77a;
+  --color-gold-300: #ead6ae;
+  --color-gold-100: #f6eedf;
+  --color-paper: #f6f6f4;
+  --color-ink: #1c2329;
+  --color-muted: #5c6670;
+  --color-line: #e2e2dd;
+
+  --font-sans: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-display: "Cairo", "IBM Plex Sans Arabic", sans-serif;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-bold transition disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink antialiased;
+    font-family: var(--font-sans);
+    font-feature-settings: "kern";
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+  ::selection {
+    background: var(--color-gold-300);
+    color: var(--color-navy-900);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gold-500);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .section-title {
+    @apply relative mb-6 flex items-center gap-3 text-xl font-extrabold text-navy-900 sm:text-2xl;
+  }
+  .section-title::before {
+    content: "";
+    @apply inline-block h-6 w-1.5 rounded-full bg-gold-500;
+  }
+  .kicker {
+    @apply text-xs font-bold tracking-wide text-gold-600 uppercase;
+  }
+  .btn-primary {
+    @apply btn bg-navy-900 text-white hover:bg-navy-800;
+  }
+  .btn-gold {
+    @apply btn bg-gold-500 text-navy-900 hover:bg-gold-300;
+  }
+  .btn-outline {
+    @apply btn border border-line bg-white text-navy-900 hover:border-navy-900;
+  }
+  .btn-danger {
+    @apply btn bg-red-700 text-white hover:bg-red-800;
+  }
+  .input {
+    @apply w-full rounded-md border border-line bg-white px-3 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-navy-700 focus:ring-2 focus:ring-gold-300 focus:outline-none;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-bold text-navy-900;
+  }
+  .field-error {
+    @apply mt-1 text-xs font-medium text-red-700;
+  }
+  .card {
+    @apply rounded-lg border border-line bg-white;
+  }
+  .badge {
+    @apply inline-flex items-center rounded px-2 py-0.5 text-xs font-bold;
+  }
+
+  /* نص المقال */
+  .article-body {
+    @apply prose prose-lg max-w-none;
+    --tw-prose-body: #26313a;
+    --tw-prose-headings: var(--color-navy-900);
+    --tw-prose-links: var(--color-navy-800);
+    --tw-prose-quotes: var(--color-navy-900);
+    --tw-prose-quote-borders: var(--color-gold-500);
+    --tw-prose-bullets: var(--color-gold-600);
+    --tw-prose-counters: var(--color-gold-600);
+    line-height: 2.05;
+    font-size: 1.15rem;
+  }
+  .article-body p {
+    margin-block: 1.1em;
+  }
+  .article-body h2,
+  .article-body h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+  }
+  .article-body blockquote {
+    border-inline-start-width: 4px;
+    font-style: normal;
+    font-weight: 600;
+    background: var(--color-gold-100);
+    padding: 0.8em 1.2em;
+    border-radius: 0.4rem;
+  }
+  .article-body blockquote p:first-of-type::before,
+  .article-body blockquote p:last-of-type::after {
+    content: none;
+  }
+  .article-body img {
+    border-radius: 0.5rem;
+    margin-inline: auto;
+  }
+  .article-body a {
+    text-decoration-color: var(--color-gold-500);
+    text-underline-offset: 4px;
+  }
+  @media (max-width: 640px) {
+    .article-body {
+      font-size: 1.07rem;
+      line-height: 1.95;
+    }
+  }
+
+  /* محرر النصوص */
+  .editor-content .ProseMirror {
+    min-height: 420px;
+    outline: none;
+    padding: 1.25rem;
+  }
+  .editor-content .ProseMirror p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: right;
+    color: #9aa3ab;
+    pointer-events: none;
+    height: 0;
+  }
+}
