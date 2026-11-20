@@ -1,0 +1,48 @@
+name: Web platform
+
+on:
+  push:
+    paths: ["web/**", ".github/workflows/web.yml"]
+  pull_request:
+    paths: ["web/**", ".github/workflows/web.yml"]
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: web
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: ghassan
+          POSTGRES_PASSWORD: ghassan_dev
+          POSTGRES_DB: ghassan_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_test
+      DIRECT_URL: postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_test
+      TEST_DATABASE_URL: postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_test
+      E2E_DATABASE_URL: postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_e2e
+      AUTH_SECRET: ci-secret-ci-secret-ci-secret-ci-secret
+      NEXT_PUBLIC_SITE_URL: http://localhost:3100
+      CHECKPOINT_DISABLE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npx prisma generate
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: PGPASSWORD=ghassan_dev psql -h localhost -U ghassan -d ghassan_test -c "CREATE DATABASE ghassan_e2e"
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
