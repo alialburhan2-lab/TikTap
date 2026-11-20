@@ -1,0 +1,81 @@
+{
+  "_note": "User-supplied images, grouped. Image files are kept OUT of git in photo-staging/<group>/ (the repository is public) until each file has a confirmed source, photographer/owner and licence. Nothing here is published.",
+  "groups": [
+    {
+      "group": "borsippa",
+      "title_ar": "زقورة بورسيبا (برس نمرود)",
+      "story_section": "babylon-civilization#borsippa",
+      "site": "borsippa",
+      "status": "pending_licence",
+      "files": [{ "no": 20, "file": "20-borsippa-ziggurat.jpg", "identification": "Ruined ziggurat of Borsippa (Birs Nimrud), Babylon governorate — real site photograph", "needs": "photographer + licence (appears to be a Wikimedia Commons image)" }]
+    },
+    {
+      "group": "old-babylonian-jewelry",
+      "title_ar": "حليّ العصر البابلي القديم",
+      "story_section": "babylon-civilization#goldsmiths",
+      "status": "pending_licence",
+      "files": [
+        { "no": 10, "file": "10-jewelry-hoard-crescent-lightning-lama.jpg", "identification": "Likely the Old Babylonian jewellery group attributed to Dilbat (crescent pendant, lightning fork, Lama figures, rosette medallions); museum photograph", "needs": "museum, accession number, licence (if Metropolitan Museum Open Access: CC0)" },
+        { "no": 9, "file": "09-granulated-gold-element.jpg", "identification": "Granulated gold element; museum-style photograph, possibly same group", "needs": "museum, accession number, date, find site, licence" },
+        { "no": 11, "file": "11-granulated-gold-bracelet.jpg", "identification": "Granulated gold bracelet/ring; museum-style photograph, possibly same group", "needs": "museum, accession number, date, find site, licence" }
+      ]
+    },
+    {
+      "group": "ur-royal-cemetery-jewelry",
+      "title_ar": "حليّ المقبرة الملكية في أور (سومرية — ليست بابلية)",
+      "story_section": "babylon-civilization#goldsmiths",
+      "site": "royal-cemetery-of-ur",
+      "status": "pending_licence",
+      "files": [
+        { "no": 2, "file": "02-lapis-gold-fluted-bead-necklace.jpg", "identification": "Lapis lazuli and gold fluted-bead necklace, style of Royal Cemetery of Ur finds (Sumerian, c. 2600–2400 BCE)", "needs": "museum, accession number, licence" },
+        { "no": 3, "file": "03-gold-leaf-pendant-necklace.jpg", "identification": "Gold leaf-pendant and lapis necklace, style of Royal Cemetery of Ur finds", "needs": "museum, accession number, licence" },
+        { "no": 5, "file": "05-carnelian-lapis-rosette-inlay.jpg", "identification": "Carnelian and lapis inlaid gold disc with carnelian beads, style of Ur finds", "needs": "museum, accession number, licence" },
+        { "no": 7, "file": "07-three-strand-lapis-gold-beads.jpg", "identification": "Three-strand lapis and gold bead necklace, style of Ur finds", "needs": "museum, accession number, licence" }
+      ]
+    },
+    {
+      "group": "esagila-etemenanki-reconstructions",
+      "title_ar": "إعادة تصوّر معبد مردوخ وزقورة إيتيمينانكي",
+      "story_section": "babylon-civilization#esagila-etemenanki",
+      "status": "pending_licence",
+      "publish_as": "Artistic reconstruction — not a photograph",
+      "files": [
+        { "no": 13, "file": "13-temple-complex-drawing.jpg", "identification": "Architectural reconstruction drawing of a temple complex", "needs": "author, publication, licence; confirm it depicts Esagila" },
+        { "no": 14, "file": "14-marduk-temple-line-drawing.jpg", "identification": "Line drawing captioned 'Reconstruction of the Temple of Marduk at Babylon'", "needs": "author, publication, licence" },
+        { "no": 15, "file": "15-babylon-digital-render.jpg", "identification": "Digital rendering of Babylon with Etemenanki", "needs": "author, licence" },
+        { "no": 17, "file": "17-ziggurat-3d-model.jpg", "identification": "3D model of Etemenanki (academic-style figure)", "needs": "author, publication, licence" },
+        { "no": 18, "file": "18-ziggurat-digital-art.jpg", "identification": "Digital artwork of Etemenanki and surroundings", "needs": "author, licence" }
+      ]
+    },
+    {
+      "group": "cuneiform-tablets",
+      "title_ar": "الألواح المسمارية",
+      "story_section": "babylon-civilization#cuneiform",
+      "status": "pending_licence",
+      "files": [{ "no": 19, "file": "19-cuneiform-tablet.jpg", "identification": "Cuneiform clay tablet, unidentified", "needs": "museum, accession number, content/date, licence" }]
+    },
+    {
+      "group": "unidentified-jewelry",
+      "title_ar": "حليّ غير معرّفة",
+      "status": "needs_identification",
+      "files": [
+        { "no": 1, "file": "01-gold-pendant-earrings.jpg", "identification": "Pair of granulated gold pendants, origin unknown", "needs": "identification, source, licence" },
+        { "no": 4, "file": "04-inscribed-gold-earrings.jpg", "identification": "Pair of gold earrings/ornaments with cuneiform inscription and scale bar", "needs": "identification (site/period), source, licence" },
+        { "no": 6, "file": "06-four-gold-rings-display.jpg", "identification": "Four gold rings in a museum display case", "needs": "museum, identification, licence" },
+        { "no": 8, "file": "08-gold-earrings-with-bells.jpg", "identification": "Pair of gold earrings with bell-shaped pendants, origin unknown", "needs": "identification, source, licence" }
+      ]
+    },
+    {
+      "group": "market-unverified",
+      "title_ar": "قطع من مصادر تجارية (غير موثوقة)",
+      "status": "not_for_publication",
+      "files": [{ "no": 12, "file": "12-carnelian-lapis-necklace-on-stand.jpg", "identification": "Carnelian, lapis and gold-bead necklace on a display bust — looks like a dealer/sales photo; authenticity and provenance unknown", "needs": "do not publish unless a museum provenance is documented" }]
+    },
+    {
+      "group": "copyrighted-do-not-use",
+      "title_ar": "محمي بحقوق النشر — لا يُستخدم",
+      "status": "rejected",
+      "files": [{ "no": 16, "file": "16-ancient-history-magazine-illustration.jpg", "identification": "Illustration watermarked 'ANCIENT HISTORY www.ancienthistorymag.com'", "needs": "rejected — copyrighted magazine artwork; usable only with written permission from the publisher" }]
+    }
+  ]
+}
