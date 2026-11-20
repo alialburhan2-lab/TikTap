@@ -24,6 +24,7 @@ jobs:
           --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
     env:
       DATABASE_URL: postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_test
+      DIRECT_URL: postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_test
       TEST_DATABASE_URL: postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_test
       E2E_DATABASE_URL: postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_e2e
       AUTH_SECRET: ci-secret-ci-secret-ci-secret-ci-secret

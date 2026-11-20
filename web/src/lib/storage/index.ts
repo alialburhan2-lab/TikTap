@@ -2,11 +2,14 @@ import { randomBytes } from "crypto";
 import sharp, { type Metadata } from "sharp";
 import { cloudinaryDriver } from "./cloudinary";
 import { localDriver } from "./local";
+import { vercelBlobDriver } from "./vercel-blob";
 import type { StorageDriver } from "./types";
 
 export function getDriver(name?: string): StorageDriver {
   const n = name || process.env.STORAGE_DRIVER || "local";
-  return n === "cloudinary" ? cloudinaryDriver : localDriver;
+  if (n === "cloudinary") return cloudinaryDriver;
+  if (n === "vercel-blob") return vercelBlobDriver;
+  return localDriver;
 }
 
 export const ALLOWED_FORMATS = ["jpeg", "png", "webp", "gif", "avif"] as const;

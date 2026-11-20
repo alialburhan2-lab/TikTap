@@ -5,6 +5,7 @@ export const E2E_DB = process.env.E2E_DATABASE_URL || "postgresql://ghassan:ghas
 
 const env = {
   DATABASE_URL: E2E_DB,
+  DIRECT_URL: E2E_DB,
   AUTH_SECRET: "e2e-secret-e2e-secret-e2e-secret-e2e",
   AUTH_TRUST_HOST: "true",
   ADMIN_EMAIL: "owner@e2e.local",

@@ -15,6 +15,7 @@ export default defineConfig({
     testTimeout: 30000,
     env: {
       DATABASE_URL: process.env.TEST_DATABASE_URL || "postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_test?schema=public",
+      DIRECT_URL: process.env.TEST_DATABASE_URL || "postgresql://ghassan:ghassan_dev@localhost:5432/ghassan_test?schema=public",
       AUTH_SECRET: "test-secret-test-secret-test-secret",
       ANALYTICS_SALT: "test",
       UPLOAD_DIR: "./test-results/uploads-unit",
