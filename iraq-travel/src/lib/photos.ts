@@ -1,5 +1,6 @@
 import type { ImageAsset } from "@/data/types";
 import manifest from "@/data/image-manifest.json";
+import { COMMONS_IMAGES } from "@/data/commons-images";
 
 type ManifestEntry = {
   site_id: string; also_site_ids: string[]; hero: string | null; gallery: string[]; thumbnail: string | null;
@@ -19,10 +20,11 @@ for (const m of manifest as ManifestEntry[]) {
   for (const slug of [m.site_id, ...m.also_site_ids]) if (!BY_SITE.has(slug)) BY_SITE.set(slug, images);
 }
 
+/** Local verified photos (photo pack) first, then reviewed Wikimedia Commons photos. */
 export function manifestPhotos(siteSlug: string): ImageAsset[] {
-  return BY_SITE.get(siteSlug) ?? [];
+  return BY_SITE.get(siteSlug) ?? COMMONS_IMAGES[`site:${siteSlug}`] ?? [];
 }
 
 export function governoratePhotos(govSlug: string): ImageAsset[] {
-  return BY_SITE.get(`gov:${govSlug}`) ?? [];
+  return BY_SITE.get(`gov:${govSlug}`) ?? COMMONS_IMAGES[`gov:${govSlug}`] ?? [];
 }
