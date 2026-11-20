@@ -22,3 +22,7 @@ for (const m of manifest as ManifestEntry[]) {
 export function manifestPhotos(siteSlug: string): ImageAsset[] {
   return BY_SITE.get(siteSlug) ?? [];
 }
+
+export function governoratePhotos(govSlug: string): ImageAsset[] {
+  return BY_SITE.get(`gov:${govSlug}`) ?? [];
+}

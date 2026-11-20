@@ -3,7 +3,7 @@ import type { EntityMap, EntityName, Governorate, TouristSite } from "@/data/typ
 import { repo } from "@/lib/store";
 import { showDemoData } from "@/lib/env";
 import { isAdvisoryActive } from "@/lib/access";
-import { manifestPhotos } from "@/lib/photos";
+import { governoratePhotos, manifestPhotos } from "@/lib/photos";
 
 /** Public reads: only published records; demo records only when enabled. */
 export async function listPublic<K extends EntityName>(entity: K): Promise<EntityMap[K][]> {
@@ -13,7 +13,9 @@ export async function listPublic<K extends EntityName>(entity: K): Promise<Entit
 }
 
 export async function getGovernorates(): Promise<Governorate[]> {
-  return (await listPublic("governorates")).sort((a, b) => a.name.en.localeCompare(b.name.en));
+  return (await listPublic("governorates"))
+    .map((g) => (g.images.some((i) => i.verified) ? g : { ...g, images: governoratePhotos(g.slug) }))
+    .sort((a, b) => a.name.en.localeCompare(b.name.en));
 }
 
 export async function getGovernorateBySlug(slug: string) {

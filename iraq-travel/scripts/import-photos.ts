@@ -22,7 +22,8 @@
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { PHOTO_CATALOG } from "../src/data/photo-catalog";
+import { PHOTO_CATALOG, type CatalogEntry } from "../src/data/photo-catalog";
+import { EXTRA_PHOTO_ENTRIES } from "../src/data/photo-extra";
 
 const ROOT = path.join(__dirname, "..");
 const IMG_DIR = path.join(ROOT, "public", "images", "iraq");
@@ -33,7 +34,7 @@ type Credits = Partial<Record<"photographer" | "license" | "source_url" | "attri
 const manifest: unknown[] = [];
 const missing: unknown[] = [];
 
-for (const e of PHOTO_CATALOG) {
+for (const e of [...PHOTO_CATALOG, ...EXTRA_PHOTO_ENTRIES] as CatalogEntry[]) {
   const dir = path.join(IMG_DIR, e.folder);
   const files = existsSync(dir) ? readdirSync(dir).filter((f) => /\.(jpe?g|png|webp)$/i.test(f)).sort() : [];
   const credits: Credits = existsSync(path.join(dir, "credits.json")) ? JSON.parse(readFileSync(path.join(dir, "credits.json"), "utf8")) : {};
