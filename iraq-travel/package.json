@@ -8,8 +8,9 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/*.test.ts",
-    "db:seed-sql": "tsx scripts/generate-seed-sql.ts"
+    "test": "tsx --tsconfig tsconfig.json --test tests/*.test.ts",
+    "db:seed-sql": "tsx scripts/generate-seed-sql.ts",
+    "photos:import": "tsx scripts/import-photos.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.119.2",

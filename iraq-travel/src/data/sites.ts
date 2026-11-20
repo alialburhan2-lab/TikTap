@@ -59,6 +59,10 @@ export const touristSites: TouristSite[] = [
     summary: L("The great brick arch of the Sasanian palace at Ctesiphon, near Salman Pak south-east of Baghdad.", "القوس الطابوقي العظيم للقصر الساساني في المدائن قرب سلمان باك جنوب شرق بغداد."),
     history: L("Built around the 6th century CE, it is among the largest single-span unreinforced brick vaults ever constructed. Restoration work has been carried out in recent years.", "بُني نحو القرن السادس الميلادي، ويعدّ من أكبر الأقواس الطابوقية ذات الفتحة الواحدة في التاريخ، وجرت عليه أعمال ترميم في السنوات الأخيرة.") }),
 
+  site({ slug: "aqar-quf", gov: "baghdad", cats: ["archaeological"], interests: ["archaeology", "history"], lat: 33.3536, lng: 44.2026, hours: 1.5,
+    name: L("Aqar Quf (Dur-Kurigalzu)", "عقرقوف (دور كوريكالزو)", "عەقەرقووف", "Aqar Quf (Dur-Kurigalzu)", "Aqar Quf (Dur-Kurigalzu)", "Aqar Quf (Dur-Kurigalzu)"),
+    summary: L("The mud-brick core of a Kassite ziggurat west of Baghdad, one of the most visible ancient monuments near the capital.", "اللب الطيني لزقورة كيشية غرب بغداد، ومن أبرز المعالم القديمة قرب العاصمة."),
+    history: L("Built by the Kassite king Kurigalzu around the 14th century BCE as part of the royal city of Dur-Kurigalzu; reed-mat layers are still visible between the brick courses.", "شيدها الملك الكيشي كوريكالزو نحو القرن الرابع عشر قبل الميلاد ضمن مدينة دور كوريكالزو الملكية، ولا تزال طبقات حصران القصب ظاهرة بين صفوف الطابوق.") }),
   // ---------------- Dhi Qar ----------------
   site({ slug: "ziggurat-of-ur", gov: "dhi-qar", cats: ["archaeological"], interests: ["archaeology", "history", "religious"], lat: 30.9627, lng: 46.1031, hours: 2, featured: true, unesco: UNESCO.ahwar,
     name: L("Ziggurat of Ur", "زقورة أور", "زیگوراتی ئور", "Ziggourat d'Ur", "Zikkurat von Ur", "Zigurat de Ur"),
@@ -93,6 +97,16 @@ export const touristSites: TouristSite[] = [
     summary: L("Marsh town and the usual starting point for boat trips into the Central Marshes and visits to reed mudhifs.", "بلدة في الأهوار ونقطة الانطلاق المعتادة لرحلات القوارب في الأهوار الوسطى وزيارة المضايف القصبية."),
     history: L("Communities here maintain Marsh Arab traditions including reed architecture and buffalo herding.", "تحافظ المجتمعات هنا على تقاليد عرب الأهوار ومنها العمارة القصبية وتربية الجاموس.") }),
 
+  site({ slug: "nippur", gov: "qadisiyah", cats: ["archaeological", "religious"], interests: ["archaeology", "history", "religious"], lat: 32.127, lng: 45.233, hours: 1.5,
+    restrictions: "Remote archaeological site; access arrangements not confirmed — check with local antiquities authorities.",
+    name: L("Nippur (Nuffar)", "نفّر (نيبور)", "نیپوور", "Nippur", "Nippur", "Nippur"),
+    summary: L("The sacred city of the god Enlil, one of the most important religious centres of ancient Mesopotamia.", "مدينة الإله إنليل المقدسة، ومن أهم المراكز الدينية في بلاد الرافدين القديمة."),
+    history: L("Excavations since the 19th century recovered tens of thousands of cuneiform tablets here, including major Sumerian literary texts.", "كشفت التنقيبات منذ القرن التاسع عشر عن عشرات الآلاف من الألواح المسمارية، ومنها نصوص أدبية سومرية مهمة.") }),
+  site({ slug: "wasit-ancient-city", gov: "wasit", cats: ["archaeological"], interests: ["archaeology", "history"], lat: 32.181, lng: 46.302, hours: 1.5,
+    restrictions: "Remote archaeological site; access arrangements not confirmed.",
+    name: L("Ancient Wasit", "مدينة واسط الأثرية", "واستی کۆن", "Wasit antique", "Antikes Wasit", "Antigua Wasit"),
+    summary: L("Ruins of the early Islamic city founded by al-Hajjaj, including the remains of its great mosque and a later minaret gateway.", "أطلال المدينة الإسلامية المبكرة التي أسسها الحجاج، ومنها بقايا جامعها الكبير وبوابة المنارة اللاحقة."),
+    history: L("Founded around 702 CE midway between Kufa and Basra, Wasit was a major administrative city until the Tigris shifted its course.", "تأسست نحو عام 702م في منتصف الطريق بين الكوفة والبصرة، وظلت مدينة إدارية كبرى حتى تغيّر مجرى دجلة.") }),
   // ---------------- Muthanna ----------------
   site({ slug: "uruk", gov: "muthanna", cats: ["archaeological"], interests: ["archaeology", "history"], lat: 31.324, lng: 45.637, hours: 2, unesco: UNESCO.ahwar,
     name: L("Uruk (Warka)", "الوركاء (أوروك)", "ئوروک", "Uruk", "Uruk", "Uruk"),

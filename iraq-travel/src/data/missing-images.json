@@ -1,0 +1,252 @@
+[
+  {
+    "site_id": "ziggurat-of-ur",
+    "folder": "ur-ziggurat",
+    "name_en": "Ziggurat of Ur",
+    "name_ar": "زقورة أور",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.visitiraq.iq/discoveriraq",
+    "source_note": "UNESCO Ahwar / official Iraq tourism page",
+    "guidance": "Full stepped ziggurat from front or three-quarter angle; avoid generic Mesopotamian temple images."
+  },
+  {
+    "site_id": "ur",
+    "folder": "ancient-city-of-ur",
+    "name_en": "Ancient City of Ur",
+    "name_ar": "مدينة أور الأثرية",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/list/1481/",
+    "source_note": "UNESCO Ahwar property page; official Iraq tourism page",
+    "guidance": "Wide archaeological landscape showing the actual site and excavated remains; do not use the ziggurat image as the only site photo."
+  },
+  {
+    "site_id": "royal-cemetery-of-ur",
+    "folder": "royal-cemetery-of-ur",
+    "name_en": "Royal Cemetery of Ur",
+    "name_ar": "المقبرة الملكية في أور",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.google.com/search?q=Royal+Cemetery+of+Ur+archaeology+photos",
+    "source_note": "Museum / academic / licensed photo archives",
+    "guidance": "Excavation or museum-context photos explicitly captioned Royal Cemetery of Ur; do not substitute unrelated tombs."
+  },
+  {
+    "site_id": "central-marshes",
+    "folder": "mesopotamian-marshes",
+    "name_en": "Mesopotamian Marshes / Al-Chibayish",
+    "name_ar": "الأهوار / الجبايش",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.visitiraq.iq/discoveriraq",
+    "source_note": "UNESCO Ahwar property page; official Iraq tourism page",
+    "guidance": "Genuine marsh landscape, reed houses, local boats and water buffalo; caption the exact marsh area if known."
+  },
+  {
+    "site_id": "babylon-ancient-city",
+    "folder": "babylon-archaeological-city",
+    "name_en": "Ancient Babylon",
+    "name_ar": "مدينة بابل الأثرية",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/list/278/gallery/",
+    "source_note": "UNESCO Babylon gallery",
+    "guidance": "Actual Babylon archaeological site; distinguish restored/reconstructed elements from original remains."
+  },
+  {
+    "site_id": "lion-of-babylon",
+    "folder": "lion-of-babylon",
+    "name_en": "Lion of Babylon",
+    "name_ar": "أسد بابل",
+    "reason": "no photo files",
+    "reference_gallery": "https://commons.wikimedia.org/wiki/Category:Babylon",
+    "source_note": "Wikimedia Commons Babylon category; verify individual file description",
+    "guidance": "Close or medium view of the Lion of Babylon sculpture at the archaeological site; do not use unrelated Assyrian lamassu."
+  },
+  {
+    "site_id": "erbil-citadel",
+    "folder": "erbil-citadel",
+    "name_en": "Erbil Citadel",
+    "name_ar": "قلعة أربيل",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/list/1437/gallery/",
+    "source_note": "UNESCO Erbil Citadel gallery",
+    "guidance": "Citadel mound / historic urban fabric; not a generic Kurdish mountain castle."
+  },
+  {
+    "site_id": "hatra",
+    "folder": "hatra",
+    "name_en": "Hatra",
+    "name_ar": "الحضر",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/list/277/gallery/",
+    "source_note": "UNESCO Hatra gallery",
+    "guidance": "Hatra's monumental stone temples and arches; avoid images of Palmyra or Petra."
+  },
+  {
+    "site_id": "ashur",
+    "folder": "ashur-qalat-sherqat",
+    "name_en": "Ashur (Qal'at Sherqat)",
+    "name_ar": "آشور (قلعة الشرقاط)",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/list/1130/gallery/",
+    "source_note": "UNESCO Ashur gallery",
+    "guidance": "Actual Ashur ruins beside the Tigris; do not use Nimrud or Nineveh images."
+  },
+  {
+    "site_id": "great-mosque-of-samarra",
+    "folder": "samarra-archaeological-city",
+    "name_en": "Samarra Archaeological City",
+    "name_ar": "مدينة سامراء الأثرية",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/list/276/gallery/",
+    "source_note": "UNESCO Samarra gallery",
+    "guidance": "Spiral Malwiya minaret and/or Abu Dulaf Mosque; label each image's exact monument."
+  },
+  {
+    "site_id": "malwiya-minaret",
+    "folder": "malwiya-minaret",
+    "name_en": "Malwiya Minaret",
+    "name_ar": "مئذنة الملوية",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/list/276/gallery/",
+    "source_note": "UNESCO Samarra gallery",
+    "guidance": "The distinctive spiral minaret, not a generic mosque minaret."
+  },
+  {
+    "site_id": "nineveh-ancient-city",
+    "folder": "ancient-nineveh-adad-gate",
+    "name_en": "Ancient Nineveh / Adad Gate",
+    "name_ar": "نينوى الأثرية / بوابة أدد",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/documents/140902",
+    "source_note": "UNESCO photo/media record: Adad Gate",
+    "guidance": "Adad Gate or Nineveh's actual walls and gates; confirm exact caption and image provenance."
+  },
+  {
+    "site_id": "nimrud",
+    "folder": "nimrud-kalhu",
+    "name_en": "Nimrud (Kalhu)",
+    "name_ar": "نمرود (كالخو)",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.google.com/search?q=Nimrud+Kalhu+Iraq+archaeological+site+photos",
+    "source_note": "Museum / academic / licensed photo archives",
+    "guidance": "Nimrud's own palace/relief/lamassu material; state whether the image is archival or current."
+  },
+  {
+    "site_id": "aqar-quf",
+    "folder": "aqar-quf-dur-kurigalzu",
+    "name_en": "Aqar Quf (Dur-Kurigalzu)",
+    "name_ar": "عقرقوف (دور كوريكالزو)",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/statesparties/iq",
+    "source_note": "UNESCO Iraq tentative list entry; seek licensed site photographs",
+    "guidance": "The distinctive mudbrick ziggurat at Aqar Quf; not Ur's ziggurat."
+  },
+  {
+    "site_id": "taq-kasra",
+    "folder": "taq-kasra-ctesiphon",
+    "name_en": "Taq Kasra / Ctesiphon",
+    "name_ar": "طاق كسرى / المدائن",
+    "reason": "no photo files",
+    "reference_gallery": "https://commons.wikimedia.org/wiki/Category:Taq_Kasra",
+    "source_note": "Wikimedia Commons Taq Kasra category",
+    "guidance": "The monumental surviving brick arch; do not use Persian palace arches elsewhere."
+  },
+  {
+    "site_id": "mustansiriya-madrasa",
+    "folder": "mustansiriya-madrasa",
+    "name_en": "Mustansiriya Madrasa",
+    "name_ar": "المدرسة المستنصرية",
+    "reason": "no photo files",
+    "reference_gallery": "https://commons.wikimedia.org/wiki/Category:Mustansiriya_Madrasa",
+    "source_note": "Wikimedia Commons category; verify each file",
+    "guidance": "The actual Baghdad madrasa facade, courtyard or details."
+  },
+  {
+    "site_id": "iraq-museum",
+    "folder": "iraqi-national-museum",
+    "name_en": "Iraqi National Museum",
+    "name_ar": "المتحف العراقي",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/documents/135192",
+    "source_note": "UNESCO photo/media record; museum's official channels",
+    "guidance": "Exterior/interior images of the Baghdad museum; artifact photos must identify the artifact and collection."
+  },
+  {
+    "site_id": "wasit-ancient-city",
+    "folder": "wasit-archaeological-site",
+    "name_en": "Wasit Archaeological Site",
+    "name_ar": "مدينة واسط الأثرية",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/statesparties/iq",
+    "source_note": "UNESCO Iraq tentative list entry",
+    "guidance": "Verified photos of the Wasit archaeological site; avoid generic desert ruins."
+  },
+  {
+    "site_id": "nippur",
+    "folder": "nippur-nuffar",
+    "name_en": "Nippur (Nuffar)",
+    "name_ar": "نفّر (نيبور)",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.google.com/search?q=Nippur+Nuffar+Iraq+archaeological+site+photos",
+    "source_note": "Academic excavation archives / licensed images",
+    "guidance": "Images specifically documented as Nippur/Nuffar, not other Sumerian tells."
+  },
+  {
+    "site_id": "uruk",
+    "folder": "uruk-warka",
+    "name_en": "Uruk (Warka)",
+    "name_ar": "أوروك (الوركاء)",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.google.com/search?q=Uruk+Warka+Iraq+archaeological+site+photos",
+    "source_note": "Academic excavation archives / licensed images",
+    "guidance": "Uruk's actual archaeological landscape, Eanna precinct or Anu ziggurat remains with accurate caption."
+  },
+  {
+    "site_id": "lagash",
+    "folder": "lagash-tell-al-hiba",
+    "name_en": "Lagash (Tell al-Hiba)",
+    "name_ar": "لكش (تل الهبة)",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.google.com/search?q=Lagash+Tell+al-Hiba+Iraq+archaeology+photos",
+    "source_note": "University excavation project / licensed academic archives",
+    "guidance": "Actual Tell al-Hiba excavation images; do not use Girsu images as Lagash."
+  },
+  {
+    "site_id": "girsu",
+    "folder": "girsu-tello",
+    "name_en": "Girsu (Tello)",
+    "name_ar": "جرسو (تلّو)",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.google.com/search?q=Girsu+Tello+Iraq+archaeological+site+photos",
+    "source_note": "British Museum / archaeological project archives",
+    "guidance": "Verified Girsu/Tello site photos or excavated remains, not a generic Sumerian site."
+  },
+  {
+    "site_id": "al-ukhaidir",
+    "folder": "al-ukhaidir-fortress",
+    "name_en": "Al-Ukhaidir Fortress",
+    "name_ar": "حصن الأخيضر",
+    "reason": "no photo files",
+    "reference_gallery": "https://whc.unesco.org/en/statesparties/iq",
+    "source_note": "UNESCO Iraq tentative list entry",
+    "guidance": "The actual Abbasid fortress exterior, courtyard and halls."
+  },
+  {
+    "site_id": "great-mosque-of-kufa",
+    "folder": "kufa-mosque-dar-al-imara",
+    "name_en": "Kufa Mosque & Dar al-Imara",
+    "name_ar": "مسجد الكوفة ودار الإمارة",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.google.com/search?q=Kufa+Mosque+Dar+al+Imara+Iraq+photos",
+    "source_note": "Official site / licensed photo sources",
+    "guidance": "Separate mosque and archaeological palace photos; do not merge them into one unidentified image."
+  },
+  {
+    "site_id": "wadi-al-salam",
+    "folder": "wadi-al-salam",
+    "name_en": "Wadi Al-Salam Cemetery",
+    "name_ar": "مقبرة وادي السلام",
+    "reason": "no photo files",
+    "reference_gallery": "https://www.google.com/search?q=Wadi+Al+Salam+Najaf+photography",
+    "source_note": "Licensed photography / official local sources",
+    "guidance": "Respectful wide landscape photography; avoid intrusive images of graves or visitors."
+  }
+]

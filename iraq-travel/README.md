@@ -136,7 +136,7 @@ The migrations and seed were tested against PostgreSQL 16, including the RLS beh
 * 6 languages: en (default), ar, ckb (RTL), fr, de, es. The language switcher keeps the current page, and localized destination names are included. Safety/legal text intentionally stays in its reviewed English original, with a notice.
 * Homepage sections A–J: hero, search (governorate / destination / category / budget / days), featured destinations, UNESCO, planner, safety, hotels, food, transport, footer.
 * All 18 governorates with their own pages: history, geography, best time to visit, sites grouped by archaeological/natural/religious, activities, hotels, restaurants, transport, typical costs, safety, map and sources.
-* Archaeological encyclopedia: **45 sites**, with Arabic and English names and descriptions, history, approximate coordinates, UNESCO links, restrictions, sources, last-verified date and status.
+* Archaeological encyclopedia: **48 sites**, with Arabic and English names and descriptions, history, approximate coordinates, UNESCO links, restrictions, sources, last-verified date and status.
 * UNESCO heritage page (6 Iraqi listings with links to whc.unesco.org).
 * IRAQ FAIR PRICE: min/avg/max, IQD + USD, unit, city, provider, source, last updated, status, warnings for outdated/unverified records, managed from admin.
 * Hotels and restaurants: categories, filters, detail pages, amenities, menus, provider verification badge, moderated reviews, no "safe/approved" claims.
@@ -163,7 +163,18 @@ The migrations and seed were tested against PostgreSQL 16, including the RLS beh
 
 ---
 
-## 7. Content sources
+## 7. Site photographs (photo pack)
+
+The 25 entries of the *IRAQ TRAVEL Archaeological Photo Catalog* are defined in `src/data/photo-catalog.ts`, and each has a folder in `public/images/iraq/<folder>/`.
+
+1. Put the licensed files in the folder using the catalog's names: `<folder>-hero.jpg`, `<folder>-gallery-01.jpg`, `<folder>-thumbnail.jpg`.
+2. Add `credits.json` next to them: `photographer`, `license`, `source_url`, `attribution`, and optionally `alt_en` / `alt_ar`.
+3. Run `npm run photos:import`. This regenerates `src/data/image-manifest.json` and `src/data/missing-images.json`.
+4. A person checks that each photo shows the exact place and that its licence is valid. They then add `"verification_status": "verified"`, `"verified_by"` and `"verified_at"` to `credits.json`, and run the import again.
+
+Only **verified** entries appear on the public site, as the hero image plus a gallery with credit and licence. The script never marks a photo verified on its own. Photos attached to a site in the admin CMS take precedence over the manifest.
+
+## 8. Content sources
 
 The initial list (verify the links and their terms of use): UNESCO World Heritage Centre, the Iraqi Ministry of Culture, Tourism and Antiquities, Iraqi Airways, OpenStreetMap, UK FCDO travel advice and the U.S. Department of State. Manage them under **Admin → Sources**.
 

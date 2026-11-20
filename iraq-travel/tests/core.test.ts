@@ -152,3 +152,18 @@ test("staleness", () => {
   assert.equal(isStale(new Date().toISOString()), false);
   assert.equal(isStale("2020-01-01"), true);
 });
+
+test("photo catalog: every entry maps to an existing site; unverified photos never publish", async () => {
+  const { PHOTO_CATALOG } = await import("../src/data/photo-catalog");
+  const manifest = (await import("../src/data/image-manifest.json")).default as { site_id: string; verification_status: string }[];
+  const { manifestPhotos } = await import("../src/lib/photos");
+  const slugs = new Set(store.touristSites.map((s) => s.slug));
+  assert.equal(PHOTO_CATALOG.length, 25);
+  for (const e of PHOTO_CATALOG) {
+    assert.ok(slugs.has(e.siteSlug), `catalog ${e.folder} -> missing site ${e.siteSlug}`);
+    for (const extra of e.alsoSiteSlugs ?? []) assert.ok(slugs.has(extra), `missing site ${extra}`);
+  }
+  assert.equal(new Set(PHOTO_CATALOG.map((e) => e.folder)).size, 25, "duplicate folders");
+  assert.equal(manifest.length, 25);
+  for (const m of manifest) if (m.verification_status !== "verified") assert.deepEqual(manifestPhotos(m.site_id), []);
+});

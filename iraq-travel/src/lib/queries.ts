@@ -3,6 +3,7 @@ import type { EntityMap, EntityName, Governorate, TouristSite } from "@/data/typ
 import { repo } from "@/lib/store";
 import { showDemoData } from "@/lib/env";
 import { isAdvisoryActive } from "@/lib/access";
+import { manifestPhotos } from "@/lib/photos";
 
 /** Public reads: only published records; demo records only when enabled. */
 export async function listPublic<K extends EntityName>(entity: K): Promise<EntityMap[K][]> {
@@ -20,7 +21,8 @@ export async function getGovernorateBySlug(slug: string) {
 }
 
 export async function getSites(): Promise<TouristSite[]> {
-  return listPublic("touristSites");
+  // Editor-attached photos (CMS) take precedence; otherwise use verified photos from image-manifest.json.
+  return (await listPublic("touristSites")).map((s) => (s.images.some((i) => i.verified) ? s : { ...s, images: manifestPhotos(s.slug) }));
 }
 
 export async function getSiteBySlug(slug: string) {

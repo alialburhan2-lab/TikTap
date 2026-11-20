@@ -203,6 +203,17 @@ async function SiteView({ site, sites, governorates, locale, t }: { site: Touris
         <div className="space-y-10 lg:col-span-2">
           <section><h2 className="font-display mb-3 text-2xl font-bold text-river-900">{t.common.about}</h2><Translated text={site.summary} locale={locale} t={t} /></section>
           <section><h2 className="font-display mb-3 text-2xl font-bold text-river-900">{t.common.history}</h2><Translated text={site.history} locale={locale} t={t} /></section>
+          {site.images.filter((i) => i.verified).length > 1 && (
+            <section aria-label="Gallery" className="grid gap-3 sm:grid-cols-2">
+              {site.images.filter((i) => i.verified).slice(1, 7).map((img) => (
+                <figure key={img.url} className="overflow-hidden rounded-2xl bg-sand-200">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={img.url} alt={img.alt || name} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                  <figcaption className="px-3 py-1.5 text-[11px] text-charcoal-600">{img.credit} · {img.license}{img.sourceUrl && <> · <a className="underline" href={img.sourceUrl} target="_blank" rel="noopener noreferrer">{t.common.source}</a></>}</figcaption>
+                </figure>
+              ))}
+            </section>
+          )}
           {site.unesco && (
             <section className="card border-s-4 border-gold-500 p-6">
               <p className="eyebrow">{t.common.unescoListed}</p>
