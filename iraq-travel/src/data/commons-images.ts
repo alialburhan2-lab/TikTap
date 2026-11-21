@@ -938,5 +938,15 @@ export const COMMONS_IMAGES: Record<string, ImageAsset[]> = {
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duhok,_Kurdistan,_Iraq.JPG",
       "verified": true
     }
+  ],
+  "site:ziggurat-of-ur": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Ancient_ziggurat_at_Ali_Air_Base_Iraq_2005.jpg/1920px-Ancient_ziggurat_at_Ali_Air_Base_Iraq_2005.jpg",
+      "alt": "The north-east façade and side stairway of the Ziggurat of Ur, Dhi Qar, Iraq",
+      "credit": "Hardnfast (English Wikipedia)",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ancient_ziggurat_at_Ali_Air_Base_Iraq_2005.jpg",
+      "verified": true
+    }
   ]
 };
