@@ -165,5 +165,12 @@ test("photo catalog: every entry maps to an existing site; unverified photos nev
   }
   assert.equal(new Set(PHOTO_CATALOG.map((e) => e.folder)).size, 25, "duplicate folders");
   assert.equal(manifest.length, 25);
-  for (const m of manifest) if (m.verification_status !== "verified") assert.deepEqual(manifestPhotos(m.site_id), []);
+  // Unverified local photo-pack entries never publish; sites may still show reviewed Commons photos.
+  for (const m of manifest as { site_id: string; folder: string; verification_status: string }[]) {
+    if (m.verification_status === "verified") continue;
+    for (const img of manifestPhotos(m.site_id)) {
+      assert.ok(!img.url.includes(`/images/iraq/${m.folder}/`), `unverified local photo published for ${m.site_id}`);
+      assert.ok(img.url.startsWith("https://upload.wikimedia.org/") && img.credit && img.license, "fallback photos must be attributed Commons files");
+    }
+  }
 });
