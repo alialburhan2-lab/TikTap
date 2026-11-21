@@ -948,5 +948,25 @@ export const COMMONS_IMAGES: Record<string, ImageAsset[]> = {
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ancient_ziggurat_at_Ali_Air_Base_Iraq_2005.jpg",
       "verified": true
     }
+  ],
+  "site:eridu": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/World%27s_First_City_%2830281054433%29.jpg",
+      "alt": "The eroded mud-brick ziggurat at Eridu (Tell Abu Shahrain), southwest of Nasiriyah",
+      "credit": "David Stanley",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:World%27s_First_City_(30281054433).jpg",
+      "verified": true
+    }
+  ],
+  "site:lagash": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Tell_al_Hiba_%2822795101268%29.jpg",
+      "alt": "Mud-brick foundations and ziggurat remains of Lagash at Tell al-Hiba",
+      "credit": "David Stanley",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tell_al_Hiba_(22795101268).jpg",
+      "verified": true
+    }
   ]
 };
